@@ -11,7 +11,7 @@
         }
       ],
       "UpstreamPathTemplate": "/gateway/Departments",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+      "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
       "DownstreamPathTemplate": "/api/Departments/{id}",
@@ -23,7 +23,7 @@
         }
       ],
       "UpstreamPathTemplate": "/gateway/Departments/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
     },
     {
       "DownstreamPathTemplate": "/api/Employees",
