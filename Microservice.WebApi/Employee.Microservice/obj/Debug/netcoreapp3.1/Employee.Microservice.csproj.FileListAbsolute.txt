@@ -58,3 +58,4 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Employee.Microservice
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Employee.Microservice\obj\Debug\netcoreapp3.1\Employee.Microservice.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Employee.Microservice\obj\Debug\netcoreapp3.1\Employee.Microservice.pdb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Employee.Microservice\obj\Debug\netcoreapp3.1\Employee.Microservice.genruntimeconfig.cache
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Employee.Microservice\obj\Debug\netcoreapp3.1\Employee.Microservice.csprojAssemblyReference.cache
