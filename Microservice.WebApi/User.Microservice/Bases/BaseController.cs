@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -72,7 +74,7 @@ namespace User.Microservice.Bases
             await _repository.Post(entity);
             return CreatedAtAction("Get", new { id = entity.Id }, entity);
         }
-
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, TEntity entity)
         {

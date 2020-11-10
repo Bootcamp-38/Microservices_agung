@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "h6QRB2bGAKVIB+jhgf7jjw0pqVForyIK7XmiJms86NVLhXqA0s651BlS98WwsHbfYdufzx+EfPrvG+mtP4X0pA==",
+  "dgSpecHash": "DJd7tjTvMlHWCdHp24RQyyXOphrPybxwhGDjGvLqsNIPpDxwvyEQe4lOq7MwGf8Q0qpRGFUmXNRB6RrCa4KIUA==",
   "success": true,
   "projectFilePath": "D:\\bootcamp\\github\\Microservices_agung\\Microservice.WebApi\\User.Microservice\\User.Microservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\bcrypt.net-next\\4.0.0\\bcrypt.net-next.4.0.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.9\\microsoft.aspnetcore.authentication.jwtbearer.3.1.9.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

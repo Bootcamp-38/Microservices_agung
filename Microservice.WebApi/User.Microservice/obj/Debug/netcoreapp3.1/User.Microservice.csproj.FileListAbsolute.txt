@@ -58,5 +58,6 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\User.Microservice\obj
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\User.Microservice\obj\Debug\netcoreapp3.1\User.Microservice.pdb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\User.Microservice\obj\Debug\netcoreapp3.1\User.Microservice.genruntimeconfig.cache
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\User.Microservice\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\User.Microservice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\User.Microservice\obj\Debug\netcoreapp3.1\User.Microservice.csproj.CoreCompileInputs.cache
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\User.Microservice\obj\Debug\netcoreapp3.1\User.Microservice.MvcApplicationPartsAssemblyInfo.cache
