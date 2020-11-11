@@ -91,7 +91,7 @@ namespace UserManagement.Controllers
         }
 
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpPatch(nameof(ChangePassword))]
+        [HttpPut(nameof(ChangePassword))]
         public Task<int> ChangePassword(Users data)
         {
             var dbPara = new DynamicParameters();
@@ -106,7 +106,7 @@ namespace UserManagement.Controllers
             return updateUser;
         }
 
-        [HttpPatch(nameof(Forgot))]
+        [HttpPatch]
         public async Task<Users> Forgot(Users entity)
         {
             Guid id = Guid.NewGuid();
