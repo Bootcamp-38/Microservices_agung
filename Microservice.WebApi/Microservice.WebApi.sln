@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.WebApi", "Gateway.W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Department.Microservice", "Department.Microservice\Department.Microservice.csproj", "{3EA100C4-7053-4E38-9F6F-3088F29671C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Microservice", "User.Microservice\User.Microservice.csproj", "{27F2958D-4098-4489-9D9E-D70C45FB5F8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Microservice", "User.Microservice\User.Microservice.csproj", "{27F2958D-4098-4489-9D9E-D70C45FB5F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagement", "UserManagement\UserManagement.csproj", "{86D147F7-1212-48B7-970A-C9169FBC5059}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{27F2958D-4098-4489-9D9E-D70C45FB5F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27F2958D-4098-4489-9D9E-D70C45FB5F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27F2958D-4098-4489-9D9E-D70C45FB5F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D147F7-1212-48B7-970A-C9169FBC5059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D147F7-1212-48B7-970A-C9169FBC5059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D147F7-1212-48B7-970A-C9169FBC5059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D147F7-1212-48B7-970A-C9169FBC5059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{1D2EC221-EA23-4664-88F1-A06ED3E6B220} = {57C8200F-A839-4E22-8DFA-3905E70F551A}
 		{3EA100C4-7053-4E38-9F6F-3088F29671C1} = {57C8200F-A839-4E22-8DFA-3905E70F551A}
 		{27F2958D-4098-4489-9D9E-D70C45FB5F8D} = {57C8200F-A839-4E22-8DFA-3905E70F551A}
+		{86D147F7-1212-48B7-970A-C9169FBC5059} = {57C8200F-A839-4E22-8DFA-3905E70F551A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36EDC258-2778-4A4A-8BE1-D89CA3A61F14}
