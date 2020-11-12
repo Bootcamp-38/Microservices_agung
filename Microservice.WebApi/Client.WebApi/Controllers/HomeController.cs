@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Client.WebApi.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace Client.WebApi.Controllers
 {
@@ -20,11 +21,13 @@ namespace Client.WebApi.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.RoleName = HttpContext.Session.GetString("Role: ");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            ViewBag.RoleName = HttpContext.Session.GetString("Role: ");
             return View();
         }
 

@@ -95,8 +95,8 @@ namespace UserManagement.Controllers
         public Task<int> ChangePassword(Users data)
         {
             var dbPara = new DynamicParameters();
-            var password = data.Password;
-            data.Password = BCrypt.Net.BCrypt.HashPassword(password);
+            //var password = data.Password;
+            data.Password = BCrypt.Net.BCrypt.HashPassword(data.Password);
             dbPara.Add("Id", data.Id);
             dbPara.Add("Password", data.Password, DbType.String);
 
