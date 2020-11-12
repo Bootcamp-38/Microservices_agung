@@ -14,5 +14,12 @@ namespace UserManagement.Context
         public DbSet<Users> Users { get; set; }
         public DbSet<Roles> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Users>().HasIndex(u => u.Email).IsUnique();
+        }
     }
+
+   
 }

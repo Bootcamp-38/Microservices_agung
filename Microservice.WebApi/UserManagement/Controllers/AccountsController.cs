@@ -39,7 +39,7 @@ namespace UserManagement.Controllers
             _dapper = dapper;
         }
 
-        [HttpPost(nameof(Register))]
+        [HttpPost]
         public async Task<int> Register(UserRoleVM data)
         {
             var dbparams = new DynamicParameters();
@@ -91,33 +91,46 @@ namespace UserManagement.Controllers
         }
 
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpPut(nameof(ChangePassword))]
-        public Task<int> ChangePassword(Users data)
+        [HttpPut]
+        public async Task<int> ChangePassword(UserRoleVM data)
         {
             var dbPara = new DynamicParameters();
-            //var password = data.Password;
-            data.Password = BCrypt.Net.BCrypt.HashPassword(data.Password);
-            dbPara.Add("Id", data.Id);
-            dbPara.Add("Password", data.Password, DbType.String);
+            dbPara.Add("@User_Email", data.User_Email, DbType.String);
+            dbPara.Add("@User_Password", BCrypt.Net.BCrypt.HashPassword(data.User_Password), DbType.String);
+            ////var password = data.Password;
+            //data.Password = BCrypt.Net.BCrypt.HashPassword(data.Password);
+            //dbPara.Add("Id", data.Id);
+            //dbPara.Add("Password", data.Password, DbType.String);
 
-            var updateUser = Task.FromResult(_dapper.Update<int>("[dbo].[SP_Change_Password]",
+            var updateUser = await Task.FromResult(_dapper.Update<int>("[dbo].[SP_Change_Password]",
                             dbPara,
                             commandType: CommandType.StoredProcedure));
             return updateUser;
         }
 
         [HttpPatch]
-        public async Task<Users> Forgot(Users entity)
+        public async Task<int> Forgot(UserRoleVM entity)
         {
             Guid id = Guid.NewGuid();
             string guid = id.ToString();
-            entity.Password = BCrypt.Net.BCrypt.HashPassword(guid);
-            _myContext.Entry(entity).State = EntityState.Modified;
-            await _myContext.SaveChangesAsync();
+            var dbparams = new DynamicParameters();
+            dbparams.Add("@User_Email", entity.User_Email, DbType.String);
+            dbparams.Add("@User_Password", BCrypt.Net.BCrypt.HashPassword(guid), DbType.String);
+            //dbparams.Add("@Email", entity.Email, DbType.String);
+            //dbparams.Add("@Password", BCrypt.Net.BCrypt.HashPassword(guid), DbType.String);
+            var result = await Task.FromResult(_dapper.Update<int>("[dbo].[SP_Change_Password]"
+                , dbparams,
+                commandType: CommandType.StoredProcedure));
 
-            MailMessage mm = new MailMessage("agungaliakbar5@gmail.com", entity.Email.ToString());
+            //Guid id = Guid.NewGuid();
+            //string guid = id.ToString();
+            //entity.Password = BCrypt.Net.BCrypt.HashPassword(guid);
+            //_myContext.Entry(entity).State = EntityState.Modified;
+            //await _myContext.SaveChangesAsync();
+
+            MailMessage mm = new MailMessage("agungaliakbar5@gmail.com", entity.User_Email.ToString());
             mm.Subject = "Reset Your Password ! " + DateTime.Now.ToString();
-            mm.Body = string.Format("Hello is your email " + entity.Email.ToString() + " your password is " + guid);
+            mm.Body = string.Format("Hello is your email " + entity.User_Email.ToString() + " your password is " + guid);
             mm.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient();
             smtp.Host = "smtp.gmail.com";
@@ -130,7 +143,7 @@ namespace UserManagement.Controllers
             smtp.Port = 587;
             smtp.Send(mm);
 
-            return entity;
+            return result;
         }
 
     }

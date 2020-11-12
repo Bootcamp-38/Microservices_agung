@@ -19,6 +19,14 @@ namespace Client.WebApi.Controllers
         {
             return View();
         }
+        public IActionResult Register()
+        {
+            return View();
+        }
+        public IActionResult Forgot()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult Get(UserRoleVM UserRoleVM)
@@ -45,6 +53,30 @@ namespace Client.WebApi.Controllers
                 else
                 {
                     return Content("GAGAL");
+                }
+            }
+        }
+
+        [HttpPatch]
+        public ActionResult Forgot(UserRoleVM user)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:5001/");
+                MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
+                client.DefaultRequestHeaders.Accept.Add(contentType);
+                string data = JsonConvert.SerializeObject(user);
+                var contentData = new StringContent(data, Encoding.UTF8, "application/json");
+                var response = client.PatchAsync("/gateway/accounts/", contentData).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    return Json(new { result = "Redirect", url = Url.Action("Index", "Login"), data = response.StatusCode });
+                    //return Json(response.Content.ReadAsStringAsync().Result.ToString());
+
+                }
+                else
+                {
+                    return Json(new { data = "Gagal" });
                 }
             }
         }

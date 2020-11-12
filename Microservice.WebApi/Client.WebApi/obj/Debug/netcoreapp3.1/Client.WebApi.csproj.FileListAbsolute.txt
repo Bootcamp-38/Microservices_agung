@@ -15,6 +15,9 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Deb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -30,6 +33,7 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Deb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
@@ -85,6 +89,8 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Deb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.csprojAssemblyReference.cache
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.AssemblyInfoInputs.cache
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.AssemblyInfo.cs
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.csproj.CoreCompileInputs.cache
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.RazorAssemblyInfo.cache
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.RazorAssemblyInfo.cs
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.TagHelpers.input.cache
@@ -93,7 +99,9 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Deb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Layout\Layout.cshtml.g.cs
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Login\Forgot.cshtml.g.cs
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Login\Register.cshtml.g.cs
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -108,9 +116,3 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Deb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.pdb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.genruntimeconfig.cache
-D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
-D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.csproj.CoreCompileInputs.cache
-D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.MvcApplicationPartsAssemblyInfo.cache
