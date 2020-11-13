@@ -27,6 +27,10 @@ namespace Client.WebApi.Controllers
         {
             return View();
         }
+        public IActionResult Change()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult Get(UserRoleVM UserRoleVM)
@@ -70,7 +74,8 @@ namespace Client.WebApi.Controllers
                 var response = client.PatchAsync("/gateway/accounts/", contentData).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return Json(new { result = "Redirect", url = Url.Action("Index", "Login"), data = response.StatusCode });
+                    return Json(new { result = "Redirect", url = Url.Action("Index", "Login"), data = response.StatusCode, fire = response.Content.ReadAsStringAsync().Result.ToString() });
+                    //return Json(new { result = "Redirect", url = Url.Action("Index", "Login"), data = response.StatusCode });
                     //return Json(response.Content.ReadAsStringAsync().Result.ToString());
 
                 }
@@ -78,6 +83,42 @@ namespace Client.WebApi.Controllers
                 {
                     return Json(new { data = "Gagal" });
                 }
+            }
+        }
+
+        protected string GetRole(string token)
+        {
+            char[] trimChars = { '/', '"' };
+
+            var handler = new JwtSecurityTokenHandler().ReadJwtToken(token.Trim(trimChars)).Claims.FirstOrDefault(x => x.Type.Equals("Role_Name")).Value;
+            return handler;
+        }
+
+        [HttpPut]
+        public ActionResult ChangePassword(UserRoleVM userRoleVM)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:5001/");
+                MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
+                client.DefaultRequestHeaders.Accept.Add(contentType);
+                var token = HttpContext.Session.GetString("token");
+                char[] trimChars = { '/', '"' };
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token.Trim(trimChars));
+                userRoleVM.User_Email = HttpContext.Session.GetString("email");
+                string data = JsonConvert.SerializeObject(userRoleVM);
+                var contentData = new StringContent(data, Encoding.UTF8, "application/json");
+                var response = client.PutAsync("/gateway/accounts/", contentData).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    return Json(new { result = "Redirect", url = Url.Action("Index", "Login"), statusCode = response.StatusCode });
+                }
+                else
+                {
+                    return Content("GAGAL");
+                }
+
             }
         }
     }

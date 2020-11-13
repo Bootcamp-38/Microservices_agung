@@ -116,3 +116,4 @@ D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Deb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.dll
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.pdb
 D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Client.WebApi.genruntimeconfig.cache
+D:\bootcamp\github\Microservices_agung\Microservice.WebApi\Client.WebApi\obj\Debug\netcoreapp3.1\Razor\Views\Login\Change.cshtml.g.cs

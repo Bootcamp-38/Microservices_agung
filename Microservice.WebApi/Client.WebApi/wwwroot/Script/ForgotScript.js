@@ -7,8 +7,9 @@
         data: UserRoleVM
     }).then((result) => {
         //debugger;
-        console.log(result);
-        if (result.data == 200) {
+        //console.log(result);
+        //if (result != "gagal") {
+        if (result.data == 200 && result.fire == "0") {
             Swal.fire({
                 position: 'center',
                 type: 'success',

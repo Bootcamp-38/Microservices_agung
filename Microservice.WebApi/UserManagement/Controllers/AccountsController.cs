@@ -94,6 +94,7 @@ namespace UserManagement.Controllers
         [HttpPut]
         public async Task<int> ChangePassword(UserRoleVM data)
         {
+
             var dbPara = new DynamicParameters();
             dbPara.Add("@User_Email", data.User_Email, DbType.String);
             dbPara.Add("@User_Password", BCrypt.Net.BCrypt.HashPassword(data.User_Password), DbType.String);
@@ -101,11 +102,16 @@ namespace UserManagement.Controllers
             //data.Password = BCrypt.Net.BCrypt.HashPassword(data.Password);
             //dbPara.Add("Id", data.Id);
             //dbPara.Add("Password", data.Password, DbType.String);
-
-            var updateUser = await Task.FromResult(_dapper.Update<int>("[dbo].[SP_Change_Password]",
-                            dbPara,
-                            commandType: CommandType.StoredProcedure));
-            return updateUser;
+            var find = await _myContext.Users.SingleOrDefaultAsync(x => x.Email == data.User_Email);
+            if (find != null)
+            {
+                var updateUser = await Task.FromResult(_dapper.Update<int>("[dbo].[SP_Change_Password]",
+                           dbPara,
+                           commandType: CommandType.StoredProcedure));
+                return updateUser;
+            }
+            return 404;
+           
         }
 
         [HttpPatch]
@@ -118,33 +124,40 @@ namespace UserManagement.Controllers
             dbparams.Add("@User_Password", BCrypt.Net.BCrypt.HashPassword(guid), DbType.String);
             //dbparams.Add("@Email", entity.Email, DbType.String);
             //dbparams.Add("@Password", BCrypt.Net.BCrypt.HashPassword(guid), DbType.String);
-            var result = await Task.FromResult(_dapper.Update<int>("[dbo].[SP_Change_Password]"
+            var find = await _myContext.Users.SingleOrDefaultAsync(x => x.Email == entity.User_Email);
+            if(find!= null)
+            {
+                var result = await Task.FromResult(_dapper.Update<int>("[dbo].[SP_Change_Password]"
                 , dbparams,
                 commandType: CommandType.StoredProcedure));
 
-            //Guid id = Guid.NewGuid();
-            //string guid = id.ToString();
-            //entity.Password = BCrypt.Net.BCrypt.HashPassword(guid);
-            //_myContext.Entry(entity).State = EntityState.Modified;
-            //await _myContext.SaveChangesAsync();
+                //Guid id = Guid.NewGuid();
+                //string guid = id.ToString();
+                //entity.Password = BCrypt.Net.BCrypt.HashPassword(guid);
+                //_myContext.Entry(entity).State = EntityState.Modified;
+                //await _myContext.SaveChangesAsync();
 
-            MailMessage mm = new MailMessage("agungaliakbar5@gmail.com", entity.User_Email.ToString());
-            mm.Subject = "Reset Your Password ! " + DateTime.Now.ToString();
-            mm.Body = string.Format("Hello is your email " + entity.User_Email.ToString() + " your password is " + guid);
-            mm.IsBodyHtml = true;
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.EnableSsl = true;
-            NetworkCredential nc = new NetworkCredential();
-            nc.UserName = "agungaliakbar5@gmail.com";
-            nc.Password = "twincell";
-            smtp.UseDefaultCredentials = true;
-            smtp.Credentials = nc;
-            smtp.Port = 587;
-            smtp.Send(mm);
+                MailMessage mm = new MailMessage("agungaliakbar5@gmail.com", entity.User_Email.ToString());
+                mm.Subject = "Reset Your Password ! " + DateTime.Now.ToString();
+                mm.Body = string.Format("Hello is your email " + entity.User_Email.ToString() + " your password is " + guid);
+                mm.IsBodyHtml = true;
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                NetworkCredential nc = new NetworkCredential();
+                nc.UserName = "agungaliakbar5@gmail.com";
+                nc.Password = "twincell";
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = nc;
+                smtp.Port = 587;
+                smtp.Send(mm);
 
-            return result;
+                return result;
+            }
+            return 404;
+
         }
+         
 
     }
 }
